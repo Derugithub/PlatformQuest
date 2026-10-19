@@ -5,6 +5,7 @@ const expoConfig = require("eslint-config-expo/flat");
 module.exports = defineConfig([
   expoConfig,
   {
-    ignores: ["dist/*"],
+    // dist is export output; src/game-html is the generated, minified game bundle.
+    ignores: ["dist/*", "src/game-html/game-html.js"],
   }
 ]);
