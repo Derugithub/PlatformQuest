@@ -1,0 +1,28 @@
+{
+  "expo": {
+    "name": "PlatformQuest",
+    "slug": "platformquest",
+    "owner": "deredo",
+    "version": "1.0.0",
+    "orientation": "landscape",
+    "scheme": "platformquest",
+    "userInterfaceStyle": "light",
+    "android": {
+      "package": "com.deredo.platformquest"
+    },
+    "plugins": [
+      "expo-dev-client",
+      "expo-router"
+    ],
+    "experiments": {
+      "typedRoutes": true,
+      "reactCompiler": true
+    },
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "301d5020-08b2-4589-9c0f-a06dac8a0d32"
+      }
+    }
+  }
+}
