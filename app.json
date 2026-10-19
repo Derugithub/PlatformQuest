@@ -5,24 +5,73 @@
     "owner": "deredo",
     "version": "1.0.0",
     "orientation": "landscape",
+    "icon": "./assets/images/icon.png",
     "scheme": "platformquest",
     "userInterfaceStyle": "light",
+    "backgroundColor": "#8FD3FF",
     "android": {
-      "package": "com.deredo.platformquest"
+      "package": "com.deredo.platformquest",
+      "adaptiveIcon": {
+        "backgroundColor": "#8FD3FF",
+        "foregroundImage": "./assets/images/android-icon-foreground.png",
+        "backgroundImage": "./assets/images/android-icon-background.png",
+        "monochromeImage": "./assets/images/android-icon-monochrome.png"
+      },
+      "predictiveBackGestureEnabled": false,
+      "permissions": [
+        "com.google.android.gms.permission.AD_ID"
+      ]
+    },
+    "web": {
+      "output": "single",
+      "favicon": "./assets/images/favicon.png"
     },
     "plugins": [
       "expo-dev-client",
-      "expo-router"
+      "expo-router",
+      "expo-sqlite",
+      "expo-system-ui",
+      "./plugins/with-sensor-landscape",
+      [
+        "expo-splash-screen",
+        {
+          "backgroundColor": "#8FD3FF",
+          "image": "./assets/images/splash-icon.png",
+          "imageWidth": 200
+        }
+      ],
+      [
+        "react-native-google-mobile-ads",
+        {
+          "androidAppId": "ca-app-pub-3940256099942544~3347511713",
+          "delayAppMeasurementInit": true
+        }
+      ],
+      [
+        "expo-build-properties",
+        {
+          "android": {
+            "enableMinifyInReleaseBuilds": true,
+            "enableShrinkResourcesInReleaseBuilds": true,
+            "extraProguardRules": "-keep class com.google.android.gms.internal.consent_sdk.** { *; }"
+          }
+        }
+      ]
     ],
     "experiments": {
       "typedRoutes": true,
       "reactCompiler": true
     },
     "extra": {
-      "router": {},
       "eas": {
         "projectId": "301d5020-08b2-4589-9c0f-a06dac8a0d32"
-      }
+      },
+      "adsMode": "test",
+      "router": {}
     }
+  },
+  "react-native-google-mobile-ads": {
+    "android_app_id": "ca-app-pub-3940256099942544~3347511713",
+    "delay_app_measurement_init": true
   }
 }
